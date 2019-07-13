@@ -1,0 +1,11 @@
+---
+version: "3.7"
+services:
+  cleanup:
+    env_file: [docker.env]
+    image: corpusops/ovh-runner-cleanup
+    build:
+      context: .
+    volumes:
+    - "./:/app"
+    - "/root/.docker:/root/.docker"
